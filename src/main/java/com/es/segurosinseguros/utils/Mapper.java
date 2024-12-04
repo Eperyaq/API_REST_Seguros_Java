@@ -1,6 +1,8 @@
 package com.es.segurosinseguros.utils;
 
+import com.es.segurosinseguros.dto.AsistenciaMedicaDto;
 import com.es.segurosinseguros.dto.SeguroDto;
+import com.es.segurosinseguros.model.AsistenciaMedica;
 import com.es.segurosinseguros.model.Seguro;
 
 public class Mapper {
@@ -39,6 +41,34 @@ public class Mapper {
         sdto.setEmbarazada(seg.isEmbarazada());
 
         return sdto;
+    }
+
+    //--------------------------------------------------------------------------------------
+
+    public static AsistenciaMedica DtoToEntityAsistencia(AsistenciaMedicaDto asistenciaMedicaDto) {
+        AsistenciaMedica a = new AsistenciaMedica();
+        a.setIdAsistenciaMedica(asistenciaMedicaDto.getIdAsistenciaMedica());
+        a.setBreveDescripcion(asistenciaMedicaDto.getBreveDescripcion());
+        a.setLugar(asistenciaMedicaDto.getLugar());
+        a.setExplicacion(asistenciaMedicaDto.getExplicacion());
+        a.setTipoAsistencia(asistenciaMedicaDto.getTipoAsistencia());
+        a.setFecha(asistenciaMedicaDto.getFecha());
+        a.setHora(asistenciaMedicaDto.getHora());
+        a.setImporte(asistenciaMedicaDto.getImporte());
+        return a;
+    }
+
+    public static AsistenciaMedicaDto EntityToDtoAsistencia(AsistenciaMedica asistenciaMedica) {
+        AsistenciaMedicaDto asistenciaMedicaDto = new AsistenciaMedicaDto();
+        asistenciaMedicaDto.setIdAsistenciaMedica(asistenciaMedica.getIdAsistenciaMedica());
+        asistenciaMedicaDto.setBreveDescripcion(asistenciaMedica.getBreveDescripcion());
+        asistenciaMedicaDto.setLugar(asistenciaMedica.getLugar());
+        asistenciaMedicaDto.setExplicacion(asistenciaMedica.getExplicacion());
+        asistenciaMedicaDto.setTipoAsistencia(asistenciaMedica.getTipoAsistencia());
+        asistenciaMedicaDto.setFecha(asistenciaMedica.getFecha());
+        asistenciaMedicaDto.setHora(asistenciaMedica.getHora());
+        asistenciaMedicaDto.setImporte(asistenciaMedica.getImporte());
+        return asistenciaMedicaDto;
     }
 
 }
